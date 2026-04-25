@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm món ăn</title>
+</head>
+<body>
+    <h2>Thêm món ăn</h2>
+    
+    <form th:object="${dish}">
+        <label>Tên món:</label>
+        <input type="text" th:field="*{name}" />
+        <br/><br/>
+        
+        <label>Nhóm món ăn:</label>
+        <select>
+            <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"></option>
+        </select>
+        <br/><br/>
+        <button type="submit">Lưu</button>
+    </form>
+</body>
+</html>
